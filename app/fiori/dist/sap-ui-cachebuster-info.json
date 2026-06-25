@@ -1,0 +1,22 @@
+{
+  "ext/fragment/Productdate.js": 1773339154000,
+  "i18n/i18n.properties": 1771839046000,
+  "ext/fragment/Productname.js": 1771835094000,
+  "ext/fragment/Info.js": 1773846302000,
+  "manifest.json": 1773846302000,
+  "Component.js": 1771589238000,
+  "Component-dbg.js": 1771589238000,
+  "Component.js.map": 1778346459558,
+  "ext/fragment/Productname-dbg.js": 1771835094000,
+  "ext/fragment/Productname.js.map": 1778346459561,
+  "ext/fragment/Info-dbg.js": 1773846302000,
+  "ext/fragment/Info.js.map": 1778346459556,
+  "ext/fragment/Productdate-dbg.js": 1773339154000,
+  "ext/fragment/Productdate.js.map": 1778346459557,
+  "Component-preload.js": 1778346459634,
+  "Component-preload.js.map": 1778346459634,
+  "ext/fragment/Productname.fragment.xml": 1771835385000,
+  "ext/fragment/Productdate.fragment.xml": 1773339192000,
+  "ext/fragment/Info.fragment.xml": 1773846338000,
+  "index.html": 1771589238000
+}

@@ -1,0 +1,191 @@
+{
+  "_version": "1.81.0",
+  "sap.app": {
+    "id": "fiori",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "intent1": {
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          },
+          "semanticObject": "Dynamic",
+          "action": "display"
+        }
+      }
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:lrop",
+      "version": "1.20.2",
+      "toolsId": "38eee0f9-b2bf-488a-80f5-8807184ae7da"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/odata/v4/product-servide/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "odataVersion": "4.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.145.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.fe.templates": {},
+        "sap.ui.richtexteditor": {},
+        "sap.fe.macros": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "fiori.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      },
+      "@i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "uri": "i18n/i18n.properties"
+      }
+    },
+    "resources": {
+      "css": []
+    },
+    "routing": {
+      "config": {},
+      "routes": [
+        {
+          "pattern": ":?query:",
+          "name": "ProductInfoList",
+          "target": "ProductInfoList"
+        },
+        {
+          "pattern": "ProductInfo({key}):?query:",
+          "name": "ProductInfoObjectPage",
+          "target": "ProductInfoObjectPage"
+        }
+      ],
+      "targets": {
+        "ProductInfoList": {
+          "type": "Component",
+          "id": "ProductInfoList",
+          "name": "sap.fe.templates.ListReport",
+          "options": {
+            "settings": {
+              "contextPath": "/ProductInfo",
+              "variantManagement": "Page",
+              "navigation": {
+                "ProductInfo": {
+                  "detail": {
+                    "route": "ProductInfoObjectPage"
+                  }
+                }
+              },
+              "controlConfiguration": {
+                "@com.sap.vocabularies.UI.v1.LineItem": {
+                  "tableSettings": {
+                    "type": "ResponsiveTable"
+                  }
+                }
+              },
+              "initialLoad": "Enabled"
+            }
+          }
+        },
+        "ProductInfoObjectPage": {
+          "type": "Component",
+          "id": "ProductInfoObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "editableHeaderContent": false,
+              "contextPath": "/ProductInfo",
+              "variantManagement": "Control",
+              "sectionLayout": "Page",
+              "controlConfiguration": {
+                "@com.sap.vocabularies.UI.v1.FieldGroup#Details": {
+                  "fields": {
+                    "Productdate": {
+                      "template": "fiori.ext.fragment.Productdate",
+                      "label": "Product Date"
+                    }
+                  }
+                }
+              },
+              "content": {
+                "body": {
+                  "sections": {
+                    "Info": {
+                      "template": "fiori.ext.fragment.Info",
+                      "position": {
+                        "placement": "After",
+                        "anchor": "Details"
+                      },
+                      "title": "Info"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "sap.fiori": {
+    "registrationIds": [],
+    "archeType": "transactional"
+  },
+  "sap.fe": {
+    "app": {
+      "enableLazyLoading": true
+    }
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "Fiori"
+  }
+}

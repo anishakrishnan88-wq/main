@@ -1,0 +1,11 @@
+POST http://localhost:4004/odata/v4/product-servide/markUpdated
+Content-Type: application/json
+
+{
+  "productName": "Dove"
+}
+
+#####
+GET http://localhost:4004/odata/v4/product-servide/getProductTypeByName(productName='Dove')
+Accept: application/json
+

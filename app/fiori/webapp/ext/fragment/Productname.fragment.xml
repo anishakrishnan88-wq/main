@@ -1,0 +1,14 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+        <ComboBox
+            id="name"
+            width="100%"
+            core:require="{handler: 'fiori/ext/fragment/Productname'}"
+            selectedKey="{path: 'filterValues>', type: 'sap.fe.macros.filter.type.Value', formatOptions: { operator: 'fiori.ext.fragment.Productname.filterItems' }}"
+        >
+            <items>
+                <core:Item id="_IDGenItem1" key="0" text="Item1"/>
+                <core:Item id="_IDGenItem2" key="1" text="Item2"/>
+                <core:Item id="_IDGenItem3" key="2" text="Item3"/>
+            </items>
+        </ComboBox>
+</core:FragmentDefinition>

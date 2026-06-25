@@ -1,0 +1,6 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:macros="sap.fe.macros" xmlns:richtexteditor="sap.fe.macros.richtexteditor">
+    <VBox id="VBox" core:require="{ handler: 'fiori/ext/fragment/Info'}">
+        <Button id="Button" text="Info" press="handler.onPress"/>
+        <macros:RichTextEditorWithMetadata metaPath="/ProductInfo/Productname" id="RichTextEditor"/>
+    </VBox>
+</core:FragmentDefinition>

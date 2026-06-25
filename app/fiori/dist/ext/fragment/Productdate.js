@@ -1,0 +1,2 @@
+sap.ui.define(["sap/m/MessageToast"],function(e){"use strict";return{onPress:function(t){var a=t.getSource().getParent().getParent();var r=a.getBindingContext();if(!r){e.show("No context available");return}var n=r.getObject();var o=n.ProductDate;if(o){e.show("Product Date: "+o)}else{e.show("Product Date not available")}}}});
+//# sourceMappingURL=Productdate.js.map
